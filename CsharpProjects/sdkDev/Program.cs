@@ -15,7 +15,9 @@ static void HumanizeDates()
     Console.WriteLine(TimeSpan.FromDays(1).Humanize());
     Console.WriteLine(TimeSpan.FromDays(16).Humanize());
 };
-
+string? thing;
+thing = Console.ReadLine();
+Console.WriteLine(thing);
 Console.WriteLine("Quantities:");
 HumanizeQuantities();
 
