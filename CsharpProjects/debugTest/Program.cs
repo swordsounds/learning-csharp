@@ -1,18 +1,24 @@
-﻿int result = Fibonacci(5);
-Console.WriteLine(result);
+﻿// Sample for the Environment.GetFolderPath method
+using System;
 
-static int Fibonacci(int n)
+class Sample
 {
-    int n1 = 0;
-    int n2 = 1;
-    int sum;
-
-    for (int i = 2; i <= n; i++)
+    public static void Main()
     {
-        sum = n1 + n2;
-        n1 = n2;
-        n2 = sum;
+        string OfflineMap1;
+        string directoryFolder = Directory.GetCurrentDirectory();
+        string fullPath = Path.Combine(directoryFolder, nameof(OfflineMap1));
+        System.IO.DirectoryInfo di = new DirectoryInfo(fullPath);
+        Console.WriteLine();
+        Console.WriteLine("GetFolderPath: {0}",
+                     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+        Console.WriteLine(Directory.GetCurrentDirectory());
+        Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory(), "OfflineMap/p13/mobile_map.mmap"));
+        Console.WriteLine(di);
     }
-
-    return n == 0 ? n1 : n2;
 }
+/*
+This example produces the following results:
+
+GetFolderPath: C:\WINNT\System32
+*/
